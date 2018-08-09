@@ -12,4 +12,7 @@ class Contact extends Model
     public function type(){
     	return $this->beLongsTo(Type::class);
     }
+    public function people(){
+    	return $this->beLongsTo(People::class);
+    }
 }
