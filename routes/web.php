@@ -11,6 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::redirect('/', 'contactos');
+
+Route::get('contactos','Web\PageController@index')->name('contactos');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
