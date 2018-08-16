@@ -14,6 +14,9 @@ class People extends Model
     	return $this->beLongsTo(User::class);
     }
     public function company(){
-    	return $this->beLongsTo(Peoples::class);
+    	return $this->beLongsTo(Company::class);
+    }
+    public function contacts(){
+    	return $this->hasMany(Contact::class);
     }
 }

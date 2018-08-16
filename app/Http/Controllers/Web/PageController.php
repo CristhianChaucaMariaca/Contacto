@@ -18,6 +18,10 @@ class PageController extends Controller
         $peoples=People::orderBy('id','DESC')->paginate('10');
         return view('web.index',compact('peoples'));
     }
+    public function contacto($id){
+        $people=People::where('id', $id)->first();
+        return view('web.contacto', compact('people'));
+    }
 
     /**
      * Show the form for creating a new resource.

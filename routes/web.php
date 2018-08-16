@@ -14,6 +14,7 @@
 Route::redirect('/', 'contactos');
 
 Route::get('contactos','Web\PageController@index')->name('contactos');
+Route::get('contacto/{id}', 'Web\PageController@contacto')->name('contacto');
 
 Auth::routes();
 
