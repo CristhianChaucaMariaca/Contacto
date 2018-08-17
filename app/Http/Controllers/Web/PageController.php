@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Web;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\People;
+use App\Tag;
 
 class PageController extends Controller
 {
@@ -15,12 +16,22 @@ class PageController extends Controller
      */
     public function index()
     {   
-        $peoples=People::orderBy('id','DESC')->paginate('10');
+        $peoples=People::orderBy('id','DESC')->paginate(10);
         return view('web.index',compact('peoples'));
     }
     public function contacto($id){
         $people=People::where('id', $id)->first();
         return view('web.contacto', compact('people'));
+    }
+    public function tag($slug){
+        $peoples= People::whereHas('tags',function($query) use ($slug){
+            $query->where('slug', $slug);
+        })->orderBy('id','DESC')->paginate(10);
+        return view('web.index', compact('peoples'));
+    }
+    public function tags(){
+        $tags=Tag::orderBy('name','DESC')->paginate(20);
+        return view('web.tags',compact('tags'));
     }
 
     /**

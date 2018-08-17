@@ -19,4 +19,7 @@ class People extends Model
     public function contacts(){
     	return $this->hasMany(Contact::class);
     }
+    public function tags(){
+        return $this->belongsToMany(Tag::class);
+    }
 }

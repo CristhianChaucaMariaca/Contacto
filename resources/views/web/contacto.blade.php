@@ -28,6 +28,10 @@
 				<div class="panel-body">
 					<b>Pagina Web: </b> {{ $people->company->web }} <br>
 					<b>Dirección: </b>	{{ $people->company->direction }}
+					<hr>
+					@foreach($people->tags as $tag)
+						<a href="{{ route('tag',$tag->slug) }}" class="btn btn-info btn-sm">{{ $tag->name }}</a> 
+					@endforeach
 				</div>
 			</div>
 		</div>

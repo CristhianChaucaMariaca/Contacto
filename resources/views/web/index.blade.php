@@ -16,9 +16,6 @@
 								@if($contact->phone)
 									<b>Telefono:</b> <small> <i>{{ $contact->extension }}</i></small>   {{ $contact->phone }} ({{ $contact->type->description }})<br>
 								@endif
-								@if($contact->email)
-									<b>Email: </b>	{{ $contact->email }} <br>
-								@endif
 							@endforeach
 					</div>
 					<div class="panel-body">

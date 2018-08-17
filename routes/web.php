@@ -15,6 +15,8 @@ Route::redirect('/', 'contactos');
 
 Route::get('contactos','Web\PageController@index')->name('contactos');
 Route::get('contacto/{id}', 'Web\PageController@contacto')->name('contacto');
+Route::get('etiquetas/{slug}', 'Web\PageController@tag')->name('tag');
+Route::get('lista-etiquetas', 'Web\PageController@tags')->name('tags');
 
 Auth::routes();
 
