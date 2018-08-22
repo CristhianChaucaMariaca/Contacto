@@ -17,8 +17,8 @@ class CreateCompaniesTable extends Migration
             $table->increments('id');
 
             $table->string('name',128)->unique();
-            $table->string('web',128)->unique();
-            $table->string('file',128);
+            $table->string('web',128)->unique()->nullable();
+            $table->string('file',128)->nullable();
             $table->string('direction',128);
 
             $table->timestamps();

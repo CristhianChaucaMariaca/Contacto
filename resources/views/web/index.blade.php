@@ -2,7 +2,7 @@
 @section('content')
 	
 	<div class="container">
-		<div class="col-md-8">
+		<div class="col-md-8 col-md-offset-2">
 			<h3>lista de contactos</h3>
 			@foreach($peoples as $people)
 				<div class="panel panel-default">
@@ -32,10 +32,6 @@
 				</div>
 			@endforeach
 			{{ $peoples->render() }}
-		</div>	
-		<div class="col-md-4">
-			<h3>Etiquetas</h3>
-			
 		</div>	
 	</div>
 

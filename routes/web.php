@@ -13,11 +13,12 @@
 
 Route::redirect('/', 'contactos');
 
+Auth::routes();
+
 Route::get('contactos','Web\PageController@index')->name('contactos');
 Route::get('contacto/{id}', 'Web\PageController@contacto')->name('contacto');
 Route::get('etiquetas/{slug}', 'Web\PageController@tag')->name('tag');
 Route::get('lista-etiquetas', 'Web\PageController@tags')->name('tags');
 
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
+//Admin
+Route::resource('companies', 'Admin\CompanyController');
