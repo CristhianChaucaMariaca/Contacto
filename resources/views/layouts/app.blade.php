@@ -50,6 +50,9 @@
                             <li>
                                 <a href="{{ route('companies.index') }}">Empresas</a>
                             </li>
+                            <li>
+                                <a href="{{ route('types.index') }}">Tipos</a>
+                            </li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
