@@ -48,6 +48,9 @@
                             <li><a href="{{ route('register') }}">Register</a></li>
                         @else
                             <li>
+                                <a href="{{ route('tags.index') }}">Etiquetas</a>
+                            </li>
+                            <li>
                                 <a href="{{ route('companies.index') }}">Empresas</a>
                             </li>
                             <li>

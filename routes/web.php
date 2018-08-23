@@ -23,3 +23,4 @@ Route::get('lista-etiquetas', 'Web\PageController@tags')->name('tags');
 //Admin
 Route::resource('companies', 'Admin\CompanyController');
 Route::resource('types', 'Admin\TypeController');
+Route::resource('tags', 'Admin\TagController');
