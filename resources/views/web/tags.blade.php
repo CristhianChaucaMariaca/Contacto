@@ -7,9 +7,26 @@
 				<h3>Lista de Etiquetas</h3>
 			</div>
 			<div class="panel-body">
-				@foreach($tags as $tag)
-					<a href=" {{ route('tag', $tag->slug) }} " class="btn btn-info btn-sm">{{ $tag->name }}</a>
-				@endforeach
+				<table class="table table-striped table-hover">
+					<thead>
+						<tr>
+							<th width="10">ID</th>
+							<th>name</th>
+							<th>&nbsp;</th>
+						</tr>
+					</thead>
+					<tbody>
+						@foreach($tags as $tag)
+							<tr>
+								<td>{{ $tag->id }}</td>
+								<td>{{ $tag->name }}</td>
+								<td>
+									<a href="{{ route('tag', $tag->slug) }}" class="btn btn-sm btn-primary">Ver</a>
+								</td>
+							</tr>
+						@endforeach
+					</tbody>
+				</table>
 				<hr>
 				{{ $tags->render() }}
 			</div>

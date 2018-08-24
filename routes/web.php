@@ -19,6 +19,8 @@ Route::get('contactos','Web\PageController@index')->name('contactos');
 Route::get('contacto/{id}', 'Web\PageController@contacto')->name('contacto');
 Route::get('etiquetas/{slug}', 'Web\PageController@tag')->name('tag');
 Route::get('lista-etiquetas', 'Web\PageController@tags')->name('tags');
+Route::get('Empresas', 'Web\PageController@companies')->name('companies');
+Route::get('Contactos-Empresa{id}', 'Web\PageController@contact_company')->name('contact_company');
 
 //Admin
 Route::resource('companies', 'Admin\CompanyController');

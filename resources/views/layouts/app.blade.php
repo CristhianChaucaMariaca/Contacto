@@ -44,6 +44,7 @@
                         <!-- Authentication Links -->
                         @guest
                             <li><a href="{{ route('tags') }}">Etiquetas</a></li>
+                            <li><a href="{{ route('companies') }}">Empresas</a></li>
                             <li><a href="{{ route('login') }}">Login</a></li>
                             <li><a href="{{ route('register') }}">Register</a></li>
                         @else

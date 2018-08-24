@@ -31,7 +31,7 @@ class CreatePeopleTable extends Migration
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
             $table->foreign('company_id')->references('id')->on('companies')
-                ->onDelete('cascade')
+                ->onDelete('set null')
                 ->onUpdate('cascade');
         });
     }

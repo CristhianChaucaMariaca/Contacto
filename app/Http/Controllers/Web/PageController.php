@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\People;
 use App\Tag;
+use App\Company;
 
 class PageController extends Controller
 {
@@ -32,6 +33,14 @@ class PageController extends Controller
     public function tags(){
         $tags=Tag::orderBy('name','DESC')->paginate(20);
         return view('web.tags',compact('tags'));
+    }
+    public function companies(){
+        $companies= Company::orderBy('id','DESC')->paginate(10);
+        return view('web.companies', compact('companies'));
+    }
+    public function contact_company($id){
+        $company=Company::find($id);
+        return view('web.company', compact('company'));
     }
 
     /**

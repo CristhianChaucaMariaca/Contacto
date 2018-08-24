@@ -17,7 +17,7 @@ class CreateContactsTable extends Migration
             $table->increments('id');
 
             $table->integer('people_id')->unsigned();
-            $table->integer('type_id')->unsigned();
+            $table->integer('type_id')->unsigned()->nullable();
 
             $table->integer('phone')->nullable();
             $table->integer('extension')->nullable();
@@ -30,7 +30,7 @@ class CreateContactsTable extends Migration
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
             $table->foreign('type_id')->references('id')->on('types')
-                ->onDelete('cascade')
+                ->onDelete('set null')
                 ->onUpdate('cascade');
         });
     }
