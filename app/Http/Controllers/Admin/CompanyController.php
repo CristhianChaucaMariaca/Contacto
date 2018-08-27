@@ -22,9 +22,12 @@ class CompanyController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $companies=Company::orderBy('id','DESC')->paginate();
+        $name=$request->get('name');
+        $companies=Company::orderBy('id','DESC')
+            ->name($name)
+            ->paginate();
         return view('admin.companies.index',compact('companies'));
     }
 

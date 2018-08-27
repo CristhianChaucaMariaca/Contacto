@@ -8,6 +8,19 @@
 					Lista de Empresas
 					<a href="{{ route('companies.create') }}" class="btn btn-sm btn-primary pull-right">Crear</a>
 				</div>
+				<div class="panel-heading">
+					<h3>
+						Buscar
+						{{ Form::open(['route'=>'companies.index','method'=>'GET','class'=>'form-inline pull-right']) }}
+						<div class="form-group">
+							{{ Form::text('name',null,['class'=>'form-control','placeholder'=>'Nombre']) }}
+						</div>
+						<div class="form-group">
+							<button class="btn btn-sm btn-primary" type="submit">Buscar</button>
+						</div>
+					{{ Form::close() }}
+					</h3>
+				</div>
 				<div class="panel-body">
 					<table class="table table-striped table-hover">
 						<thead>
@@ -16,8 +29,6 @@
 									id
 								</th>
 								<th>Nombre</th>
-								<th>Pagina Web</th>
-								<th>Direccion</th>
 								<th>Logotipo</th>
 								<th colspan="4">&nbsp;</th>
 							</tr>
@@ -27,8 +38,6 @@
 								<tr>
 									<td>{{ $company->id }}</td>
 									<td>{{ $company->name }}</td>
-									<td>{{ $company->web }}</td>
-									<td>{{ $company->direction }}</td>
 									@if($company->file)
 										<td><img src="{{ $company->file }}" alt=""></td>
 									@endif

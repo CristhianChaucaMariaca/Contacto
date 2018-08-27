@@ -15,9 +15,14 @@ class PageController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {   
-        $peoples=People::orderBy('id','DESC')->paginate(10);
+        $name=$request->get('name');
+        $last_name=$request->get('last_name');
+        $peoples=People::orderBy('id','DESC')
+            ->name($name)
+            ->last_name($last_name)
+            ->paginate(10);
         return view('web.index',compact('peoples'));
     }
     public function contacto($id){
@@ -30,12 +35,18 @@ class PageController extends Controller
         })->orderBy('id','DESC')->paginate(10);
         return view('web.index', compact('peoples'));
     }
-    public function tags(){
-        $tags=Tag::orderBy('name','DESC')->paginate(20);
+    public function tags(Request $request){
+        $tag=$request->get('tag');
+        $tags=Tag::orderBy('name','DESC')
+            ->tag($tag)
+            ->paginate(20);
         return view('web.tags',compact('tags'));
     }
-    public function companies(){
-        $companies= Company::orderBy('id','DESC')->paginate(10);
+    public function companies(Request $request){
+        $name=$request->get('name');
+        $companies= Company::orderBy('id','DESC')
+            ->name($name)
+            ->paginate(10);
         return view('web.companies', compact('companies'));
     }
     public function contact_company($id){

@@ -3,7 +3,25 @@
 	
 	<div class="container">
 		<div class="col-md-8 col-md-offset-2">
-			<h3>lista de contactos</h3>
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3>lista de contactos</h3>
+				</div>
+				<div class="panel-body">
+					{{ Form::open(['route'=>'contactos','method'=>'GET', 'class'=>'form-inline pull-right']) }}
+					<div class="form-group">
+						{{ Form::text('name',null,['class'=>'form-control','placeholder'=>'Nombre']) }}
+					</div>
+					<div class="form-group">
+						{{ Form::text('last_name',null,['class'=>'form-control','placeholder'=>'Apellido']) }}
+					</div>
+					<div class="form-group">
+						<button class="btn btn-sm btn-primary">Buscar</button>
+					</div>
+				{{ Form::close() }}
+				</div>
+			</div>
+			
 			@foreach($peoples as $people)
 				<div class="panel panel-default">
 					<div class="panel-heading">

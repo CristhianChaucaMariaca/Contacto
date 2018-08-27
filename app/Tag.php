@@ -13,4 +13,9 @@ class Tag extends Model
  	public function peoples(){
  		return $this->belongsToMany(People::class);
  	}
+
+ 	public function scopeTag($query, $name){
+ 		if($name)
+ 			return $query->where('name', 'LIKE', "%$name%");
+ 	}
 }

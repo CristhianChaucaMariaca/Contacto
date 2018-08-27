@@ -8,6 +8,17 @@
 					Lista de Etiquetas
 					<a href="{{ route('tags.create') }}" class="btn btn-sm btn-primary pull-right"> Crear</a>
 				</div>
+				<div class="panel-heading">
+					<h4>
+					Busqueda
+					{{ Form::open(['route'=>'tags.index','method'=>'GET','class'=>'form-inline pull-right']) }}
+						<div class="form-group">
+							{{ Form::text('name',null,['class'=>'form-control','placeholder'=>'Nombre']) }}
+						</div>
+						<button class="btn btn-sm btn-primary" type="submit">Buscar</button>
+					{{ Form::close() }}
+					</h4>
+				</div>
 				<div class="panel-body">
 					<table class="table table-striped table-hover">
 						<thead>

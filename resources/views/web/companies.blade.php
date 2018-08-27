@@ -5,7 +5,16 @@
 		<div class="col-md-8 col-md-offset-2">
 			<div class="panel panel-default">
 				<div class="panel-heading">
-					<h3>Lista de Empresas</h3>
+					<h3>Lista de Empresas
+						{{ Form::open(['route'=>'companies','method'=>'GET','class'=>'form-inline pull-right']) }}
+							<div class="form-group">
+								{{ Form::text('name',null,['class'=>'form-control', 'placeholder'=>'Nombre']) }}
+							</div>
+							<div class="form-group">
+								<button class="btn btn-sm btn-primary" type="submit">Buscar</button>
+							</div>
+						{{ Form::close() }}
+					</h3>
 				</div>
 				<div class="panel-body">
 					<table class="table table-striped table-hover">

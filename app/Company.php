@@ -13,4 +13,9 @@ class Company extends Model
     public function peoples(){
     	return $this->hasMany(People::class);
     }
+    public function scopeName($query, $name)
+    {
+    	if($name)
+    		return $query->where('name', 'LIKE', "%$name%");
+    }
 }
