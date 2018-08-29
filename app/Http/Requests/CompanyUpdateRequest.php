@@ -23,11 +23,15 @@ class CompanyUpdateRequest extends FormRequest
      */
     public function rules()
     {
-        return [
+        $rules= [
             'name' => 'required',
             'web'   =>  '',
-            'file'  =>  '',
             'direction' => 'required',
         ];
+
+        if($this->get('file'))
+            $rules=array_merge($rules,['file'=>'mimes:jpg,jpeg,png']);
+
+        return $rules;
     }
 }

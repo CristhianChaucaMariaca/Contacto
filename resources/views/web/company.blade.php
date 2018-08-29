@@ -17,8 +17,13 @@
 			@foreach($company->peoples as $people)
 			<div class="panel panel-default">
 				<div class="panel-heading">
-					<p><strong>Nombre: </strong> {{ $people->name }} {{ $people->last_name }}</p>
+					<div>
+						<p><strong>Nombre: </strong> {{ $people->name }} {{ $people->last_name }}</p>
 					<p><strong>Cargo: </strong> {{ $people->cargo }}</p>
+					</div>
+					<div>
+						<img src="{{ $people->file }}" alt="" class="img-responsive img-thumbnail">
+					</div>
 				</div>
 				<div class="panel-body">
 					@foreach($people->contacts as $contact)

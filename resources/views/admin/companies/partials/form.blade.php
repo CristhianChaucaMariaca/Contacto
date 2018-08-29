@@ -8,7 +8,7 @@
 </div>
 <div class="form-group">
 	{!! Form::label('file','Logotipo de la empresa') !!}
-	{!! Form::text('file',null,['class'=>'form-control','id'=>'file' ]) !!}
+	{!! Form::file('file') !!}
 </div>
 <div class="form-group">
 	{!! Form::label('direction', 'Direccion de la empresa') !!}

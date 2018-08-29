@@ -8,7 +8,7 @@
 					<h3>Crear una nueva Empresa</h3>
 				</div>
 				<div class="panel-body">
-					{!! Form::open(['route'=>'companies.store']) !!}
+					{!! Form::open(['route'=>'companies.store','files'=>true]) !!}
 						@include('admin.companies.partials.form')
 					{!! Form::close() !!}
 				</div>

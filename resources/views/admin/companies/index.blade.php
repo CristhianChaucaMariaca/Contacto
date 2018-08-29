@@ -37,9 +37,9 @@
 							@foreach($companies as $company)
 								<tr>
 									<td>{{ $company->id }}</td>
-									<td>{{ $company->name }}</td>
+									<td><strong>{{ $company->name }}</strong></td>
 									@if($company->file)
-										<td><img src="{{ $company->file }}" alt=""></td>
+										<td><img src="{{ $company->file }}" class="img-responsive img-thumbnail img-circle" width="100" height="100"></td>
 									@endif
 									<td>
 										<a href="{{ route('companies.show', $company->id) }}" class="btn btn-default btn-sm">Ver</a>

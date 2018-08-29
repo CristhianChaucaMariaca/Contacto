@@ -26,3 +26,4 @@ Route::get('Contactos-Empresa{id}', 'Web\PageController@contact_company')->name(
 Route::resource('companies', 'Admin\CompanyController');
 Route::resource('types', 'Admin\TypeController');
 Route::resource('tags', 'Admin\TagController');
+Route::resource('peoples', 'Admin\PeopleController');

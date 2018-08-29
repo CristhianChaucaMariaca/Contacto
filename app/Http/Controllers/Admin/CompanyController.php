@@ -9,6 +9,8 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\CompanyCreateRequest;
 use App\Http\Requests\CompanyUpdateRequest;
 
+use Illuminate\Support\Facades\Storage;
+
 use App\Company;
 
 class CompanyController extends Controller
@@ -50,6 +52,12 @@ class CompanyController extends Controller
     public function store(CompanyCreateRequest $request)
     {
         $company=Company::create($request->all());
+
+        if($request->file('file'))
+        {
+            $path=Storage::disk('public')->put('image\companies',$request->file('file'));
+            $company->fill(['file'=>asset($path)])->save();
+        }
         return redirect()->route('companies.edit', $company->id)
             ->with('info','Empresa creada satisfactoriamente');
     }
@@ -89,6 +97,11 @@ class CompanyController extends Controller
     {
         $company=Company::find($id);
         $company->fill($request->all())->save();
+
+        if ($request->file('file')) {
+            $path=Storage::disk('public')->put('image\companies',$request->file('file'));
+            $company->fill(['file'=>asset($path)])->save();
+        }
         return redirect()->route('companies.edit', $company->id)
             ->with('info','Empresa editada correctamente');
     }
