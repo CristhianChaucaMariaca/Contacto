@@ -33,7 +33,9 @@
 										{{ $company->id }}
 									</td>
 									<td>
-										{{ $company->file }}
+										@if($company->file)
+											<img src="{{ $company->file }}" alt="" class="img-responsive img-circle img-thumbnail" width="70" height="70">
+										@endif
 									</td>
 									<td>
 										{{ $company->name }}

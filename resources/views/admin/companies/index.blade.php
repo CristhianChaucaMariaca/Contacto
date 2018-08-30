@@ -2,14 +2,9 @@
 @section('content')
 <div class="container">
 	<div class="row">
-		<div class="col-md-12">
+		<div class="col-md-8 col-md-offset-2">
 			<div class="panel panel-default">
-				<div class="panel-heading">
-					Lista de Empresas
-					<a href="{{ route('companies.create') }}" class="btn btn-sm btn-primary pull-right">Crear</a>
-				</div>
-				<div class="panel-heading">
-					<h3>
+				<div class="panel-body">
 						Buscar
 						{{ Form::open(['route'=>'companies.index','method'=>'GET','class'=>'form-inline pull-right']) }}
 						<div class="form-group">
@@ -19,8 +14,14 @@
 							<button class="btn btn-sm btn-primary" type="submit">Buscar</button>
 						</div>
 					{{ Form::close() }}
-					</h3>
 				</div>
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					Lista de Empresas
+					<a href="{{ route('companies.create') }}" class="btn btn-sm btn-primary pull-right">Crear</a>
+				</div>
+				
 				<div class="panel-body">
 					<table class="table table-striped table-hover">
 						<thead>
@@ -39,7 +40,7 @@
 									<td>{{ $company->id }}</td>
 									<td><strong>{{ $company->name }}</strong></td>
 									@if($company->file)
-										<td><img src="{{ $company->file }}" class="img-responsive img-thumbnail img-circle" width="100" height="100"></td>
+										<td><img src="{{ $company->file }}" class="img-responsive img-thumbnail img-circle" width="60" height="60"></td>
 									@endif
 									<td>
 										<a href="{{ route('companies.show', $company->id) }}" class="btn btn-default btn-sm">Ver</a>

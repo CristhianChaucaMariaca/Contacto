@@ -4,10 +4,10 @@
 	<div class="row">
 		<div class="col-md-8 col-md-offset-2">
 			<div class="panel panel-default">
-				<div class="panel-heading">
+				<div class="panel-heading text-center">
 					<h3>{{ $company->name }}</h3>
 					@if($company->file)
-						<img src="{{ $company->file }}" class="img-responsive" alt="">
+						<img src="{{ $company->file }}" class="img-responsive img-circle img-thumbnail" alt="">
 					@endif
 				</div>
 				<div class="panel-body">

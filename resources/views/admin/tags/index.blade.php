@@ -3,13 +3,8 @@
 <div class="container">
 	<div class="row">
 		<div class="col-md-8 col-md-offset-2">
-			<div class="panel panel-default">
-				<div class="panel-heading">
-					Lista de Etiquetas
-					<a href="{{ route('tags.create') }}" class="btn btn-sm btn-primary pull-right"> Crear</a>
-				</div>
-				<div class="panel-heading">
-					<h4>
+			<div class="panel pane-default">
+				<div class="panel-body">
 					Busqueda
 					{{ Form::open(['route'=>'tags.index','method'=>'GET','class'=>'form-inline pull-right']) }}
 						<div class="form-group">
@@ -17,8 +12,15 @@
 						</div>
 						<button class="btn btn-sm btn-primary" type="submit">Buscar</button>
 					{{ Form::close() }}
-					</h4>
 				</div>
+			</div>
+			<div class="panel panel-default">
+				
+				<div class="panel-heading">
+					Lista de Etiquetas
+					<a href="{{ route('tags.create') }}" class="btn btn-sm btn-primary pull-right"> Crear</a>
+				</div>
+				
 				<div class="panel-body">
 					<table class="table table-striped table-hover">
 						<thead>

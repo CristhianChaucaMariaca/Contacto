@@ -3,11 +3,11 @@
 	<div class="container">
 		<div class="col-md-8 col-md-offset-2">
 			<div class="panel panel-default">
-				<div class="panel-heading">
-					<h4>{{ $people->name }} {{ $people->last_name }}</h4>
+				<div class="panel-heading text-center">
 					@if($people->file)
-						<img src="{{ $people->file }}" alt="" class="img-responsive">
+						<img src="{{ $people->file }}" alt="" class="img-responsive img-circle img-thumbnail">
 					@endif
+					<h4>{{ $people->name }} {{ $people->last_name }}</h4>
 				</div>
 				<div class="panel-body">
 					@foreach($people->contacts as $contact)
@@ -20,10 +20,11 @@
 			</div>
 			<div class="panel panel-default">
 				<div class="panel-heading">
-					<h4>{{ $people->company->name }}</h4>
+					<h4>{{ $people->company->name }}
 					@if($people->company->file)
-						<img src="{{ $people->company->file }}" alt="" class="img-responsive">
+						<img src="{{ $people->company->file }}" alt="" class="img-responsive img-circle img-thumbnail pull-right" width="50" height="50">
 					@endif
+					</h4>
 				</div>
 				<div class="panel-body">
 					<b>Pagina Web: </b> {{ $people->company->web }} <br>

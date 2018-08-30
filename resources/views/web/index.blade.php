@@ -4,10 +4,8 @@
 	<div class="container">
 		<div class="col-md-8 col-md-offset-2">
 			<div class="panel panel-default">
-				<div class="panel-heading">
-					<h3>lista de contactos</h3>
-				</div>
 				<div class="panel-body">
+					Buscar Contactos
 					{{ Form::open(['route'=>'contactos','method'=>'GET', 'class'=>'form-inline pull-right']) }}
 					<div class="form-group">
 						{{ Form::text('name',null,['class'=>'form-control','placeholder'=>'Nombre']) }}
@@ -25,8 +23,9 @@
 			@foreach($peoples as $people)
 				<div class="panel panel-default">
 					<div class="panel-heading">
+						<p>
 							@if($people->file)
-								<img src="{{ $people->file }}" alt="" class="img-responsive">
+								<img src="{{ $people->file }}" alt="" class="img-responsive img-circle pull-right" width="60" height="60">
 							@endif
 							Nombre: <b>{{ $people->name }} {{ $people->last_name }}</b><br>
 
@@ -35,10 +34,11 @@
 									<b>Telefono:</b> <small> <i>{{ $contact->extension }}</i></small>   {{ $contact->phone }} ({{ $contact->type->description }})<br>
 								@endif
 							@endforeach
+						</p>
 					</div>
 					<div class="panel-body">
 						@if($people->company->file)
-							<img src="{{ $people->company->file }}" alt="" class="img-responsive">
+							<img src="{{ $people->company->file }}" alt="" class="img-responsive img-circle" width="50" height="50">
 						@endif
 						@if($people->company->name)
 							<b>Empresa:</b> {{ $people->company->name }}
