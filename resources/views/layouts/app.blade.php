@@ -52,6 +52,9 @@
                                 <a href="{{ route('peoples.index') }}">Personas</a>
                             </li>
                             <li>
+                                <a href="{{ route('contacts.create') }}">Añadir contacto</a>
+                            </li>
+                            <li>
                                 <a href="{{ route('tags.index') }}">Etiquetas</a>
                             </li>
                             <li>

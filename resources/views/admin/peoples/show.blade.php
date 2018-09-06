@@ -17,6 +17,21 @@
 						<p><strong>{{ $contact->type->description }}</strong></p>
 						<p><strong>Telefono: </strong> {{ $contact->extension }} - {{ $contact->phone }} </p>
 						<p><strong>E-mail: </strong> {{ $contact->email }} </p>
+						<table class="table table-striped">
+							<tbody>
+								<tr>
+									<td>
+										<a href="{{ route('contacts.edit', $contact->id) }}" class="btn btn-sm btn-primary">Editar</a>				
+									</td>
+									<td>
+										{{ Form::open(['route'=>['contacts.destroy',$contact->id],'method'=>'DELETE']) }}
+							<button class="btn btn-sm btn-danger">Eliminar</button>
+						{{ Form::close() }} 				
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						<hr>
 					@endforeach
 				</div>
 			</div>
