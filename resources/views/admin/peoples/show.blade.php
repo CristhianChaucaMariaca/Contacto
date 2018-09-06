@@ -34,6 +34,12 @@
 						<hr>
 					@endforeach
 				</div>
+				<div class="panel-footer">
+					<h5>Etiquetas</h5>
+					@foreach($people->tags as $tag)
+						<a href="{{ route('tags_personas',$tag->slug) }}" class="btn btn-sm btn-info">{{ $tag->name }}</a>
+					@endforeach
+				</div>
 			</div>
 			<div class="panel panel-default">
 				<div class="panel-heading">

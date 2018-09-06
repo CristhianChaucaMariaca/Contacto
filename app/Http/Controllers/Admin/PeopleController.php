@@ -125,4 +125,12 @@ class PeopleController extends Controller
         return redirect()->route('peoples.index')
             ->with('info', 'Persona eliminada correctamente');
     }
+
+    public function tags($slug){
+        $peoples=People::whereHas('tags',function($query) use ($slug){
+            $query->where('slug',$slug);
+        })->orderBy('id','DESC')->paginate(10);
+
+        return view('admin.peoples.index', compact('peoples'));
+    }
 }

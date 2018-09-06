@@ -28,3 +28,4 @@ Route::resource('types', 'Admin\TypeController');
 Route::resource('tags', 'Admin\TagController');
 Route::resource('peoples', 'Admin\PeopleController');
 Route::resource('contacts', 'Admin\ContactController');
+Route::get('tags_personas/{id}','Admin\PeopleController@tags')->name('tags_personas');
