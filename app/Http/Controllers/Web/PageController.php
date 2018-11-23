@@ -10,6 +10,7 @@ use App\Company;
 
 class PageController extends Controller
 {
+    
     /**
      * Display a listing of the resource.
      *
@@ -22,6 +23,7 @@ class PageController extends Controller
         $peoples=People::orderBy('id','DESC')
             ->name($name)
             ->last_name($last_name)
+            ->where('status','PUBLIC')
             ->paginate(10);
         return view('web.index',compact('peoples'));
     }

@@ -12,6 +12,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('fontello/css/fontello.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
@@ -43,16 +44,17 @@
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
                         @guest
+                            <li><a href="{{ route('contactos') }}">Contactos</a></li>
                             <li><a href="{{ route('tags') }}">Etiquetas</a></li>
                             <li><a href="{{ route('companies') }}">Empresas</a></li>
                             <li><a href="{{ route('login') }}">Login</a></li>
                             <li><a href="{{ route('register') }}">Register</a></li>
                         @else
                             <li>
-                                <a href="{{ route('peoples.index') }}">Personas</a>
+                                <a href="{{ route('users.index') }}">Usuarios</a>
                             </li>
                             <li>
-                                <a href="{{ route('contacts.create') }}">Añadir contacto</a>
+                                <a href="{{ route('peoples.index') }}">Personas</a>
                             </li>
                             <li>
                                 <a href="{{ route('tags.index') }}">Etiquetas</a>

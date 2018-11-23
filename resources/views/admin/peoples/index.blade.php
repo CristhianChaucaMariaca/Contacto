@@ -17,7 +17,8 @@
 								</th>
 								<th>Nombre</th>
 								<th>Apellido</th>
-								<th>&nbsp;</th>
+								<th>Estado</th>
+								<th colspan="4">&nbsp;</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -26,11 +27,19 @@
 									<td>{{ $people->id }}</td>
 									<td>{{ $people->name }}</td>
 									<td>{{ $people->last_name }}</td>
-									<td><a href="{{ route('peoples.show',$people->id) }}" class="btn btn-sm btn-default">Ver</a></td>
-									<td><a href="{{ route('peoples.edit',$people->id) }}" class="btn btn-sm btn-default">Editar</a></td>
+									<td>
+										@if($people->status == 'PUBLIC')
+											<span class="icon-lock-open-filled"></span>
+										@elseif($people->status == 'PRIVATE')
+											<span class="icon-lock-filled" style="color:red;"></span>
+										@endif
+									</td>
+									<td><a href="{{ route('addcontact',$people) }}" class="btn btn-sm btn-primary"><span class="icon-user-add"></span></a></td>
+									<td><a href="{{ route('peoples.show',$people->id) }}" class="btn btn-sm btn-default"><span class="icon-vcard"></span></a></td>
+									<td><a href="{{ route('peoples.edit',$people->id) }}" class="btn btn-sm btn-default"><span class="icon-pencil"></span></a></td>
 									<td>
 										{{ Form::open(['route'=>['peoples.destroy', $people->id],'method'=>'DELETE']) }}
-										<button class="btn btn-sm btn-danger">Eliminar</button>
+										<button class="btn btn-sm btn-danger"><span class="icon-trash"></span></button>
 									{{ Form::close() }}
 									</td>
 								</tr>

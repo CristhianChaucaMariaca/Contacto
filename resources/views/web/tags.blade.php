@@ -14,7 +14,7 @@
 						</div>
 						<div class="form-group">
 							<button class="btn btn-sm btn-primary" type="submit">
-								Buscar
+								<span class="icon-search"></span>
 							</button>
 						</div>
 					{{ Form::close() }}

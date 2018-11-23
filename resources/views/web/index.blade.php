@@ -14,7 +14,7 @@
 						{{ Form::text('last_name',null,['class'=>'form-control','placeholder'=>'Apellido']) }}
 					</div>
 					<div class="form-group">
-						<button class="btn btn-sm btn-primary">Buscar</button>
+						<button class="btn btn-sm btn-primary"><span class="icon-search"></span></button>
 					</div>
 				{{ Form::close() }}
 				</div>

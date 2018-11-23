@@ -14,6 +14,11 @@ use App\Type;
 
 class ContactController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -31,9 +36,17 @@ class ContactController extends Controller
      */
     public function create()
     {
-        $peoples=People::orderBy('name','ASC')->pluck('name','id');
+        $peoples=People::orderBy('name','ASC')
+            ->where('status','PUBLIC')
+            ->pluck('name','id');
         $types=Type::orderBy('description','ASC')->pluck('description','id');
         return view('admin.contacts.create', compact('types','peoples'));
+    }
+
+    public function addContact(People $people)
+    {
+        $types=Type::orderBy('description','ASC')->pluck('description','id');
+        return view('admin.contacts.create', compact('types','people'));
     }
 
     /**

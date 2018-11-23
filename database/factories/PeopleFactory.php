@@ -10,5 +10,6 @@ $factory->define(App\People::class, function (Faker $faker) {
         'last_name'		=>	$faker->lastName,
         'file'			=>	$faker->imageUrl($width=100, $height=100),
         'cargo'		=>	$faker->sentence(3),
+        'status'		=> $faker->randomElement(['PUBLIC','PRIVATE']),
     ];
 });

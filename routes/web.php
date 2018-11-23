@@ -11,7 +11,9 @@
 |
 */
 
-Route::redirect('/', 'contactos');
+Route::get('/', function (){
+	return view('welcome');
+});
 
 Auth::routes();
 
@@ -23,9 +25,11 @@ Route::get('Empresas', 'Web\PageController@companies')->name('companies');
 Route::get('Contactos-Empresa{id}', 'Web\PageController@contact_company')->name('contact_company');
 
 //Admin
+Route::resource('users', 'Admin\UserController');
 Route::resource('companies', 'Admin\CompanyController');
 Route::resource('types', 'Admin\TypeController');
 Route::resource('tags', 'Admin\TagController');
 Route::resource('peoples', 'Admin\PeopleController');
 Route::resource('contacts', 'Admin\ContactController');
 Route::get('tags_personas/{id}','Admin\PeopleController@tags')->name('tags_personas');
+Route::get('add/{people}','Admin\ContactController@addContact')->name('addcontact');

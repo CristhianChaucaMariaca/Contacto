@@ -23,6 +23,7 @@ class CreatePeopleTable extends Migration
             $table->string('last_name',128)->nullable();
             $table->string('file',128)->nullable();
             $table->string('cargo',128)->nullable();
+            $table->enum('status',['PUBLIC','PRIVATE'])->default('PUBLIC');
 
             $table->timestamps();
 

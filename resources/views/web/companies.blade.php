@@ -11,7 +11,7 @@
 								{{ Form::text('name',null,['class'=>'form-control', 'placeholder'=>'Nombre']) }}
 							</div>
 							<div class="form-group">
-								<button class="btn btn-sm btn-primary" type="submit">Buscar</button>
+								<button class="btn btn-sm btn-primary" type="submit"><span class="icon-search"></span></button>
 							</div>
 						{{ Form::close() }}
 					</h3>
